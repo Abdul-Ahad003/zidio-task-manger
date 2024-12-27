@@ -20,9 +20,6 @@ const Deadline = () => {
         setalldeadlines([...alldeadlines, { title, date, time }])
     }
 
-    // setInterval(() => {
-        
-    // }, 6000);
 
     if ("Notification" in window && Notification.permission !== "denied") {
         Notification.requestPermission().then(permission => {
@@ -37,7 +34,7 @@ const Deadline = () => {
                         new Notification("Current Time", { body: `Deadline for ${element.title} has ended`  });
                     }
                 });
-            }, 60000); // Triggers every 1 minute
+            }, 60000); 
           }
         });
       } else {
